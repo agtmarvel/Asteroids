@@ -2,6 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import pygame
+import random
 import sys
 from constants import *
 from player import *
@@ -57,7 +58,7 @@ def main():
 			for bullet in shot:
 				if asteroid.collision(bullet):
 					bullet.kill()
-					asteroid.kill()
+					asteroid.split()
 					break
 			if player.collision(asteroid):
 				print("Game over!")
